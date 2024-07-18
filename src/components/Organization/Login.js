@@ -54,7 +54,7 @@ const Login = () => {
       <div className="bg-white shadow-md border border-gray-200 rounded-lg w-full max-w-md p-6 space-y-6">
         <form onSubmit={submit} className="space-y-6">
           <h3 className="text-2xl font-semibold text-gray-900 text-center">
-            Mark Attendance Manager
+            Mark Presence Pulse
           </h3>
           <div>
             <label
@@ -70,8 +70,8 @@ const Login = () => {
               required
             >
               <option value="Org">Organisation</option>
-           <option value="Emp">Employee</option>
-            </select> 
+              <option value="Emp">Employee</option>
+            </select>
           </div>
           <div>
             <label
@@ -107,7 +107,7 @@ const Login = () => {
           </div>
           <button
             type="submit"
-            className="w-full text-white bg-gray-800 hover:bg-gray-900 focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center"
+            className="w-full text-white bg-blue-800 hover:bg-blue-900 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center"
           >
             Log in
           </button>

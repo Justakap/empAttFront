@@ -208,30 +208,17 @@ export default function PunchIn(props) {
             });
     };
 
-        function MapComponent() {
-            const map = useMap();
-            const polygonPoints = routes.filter((e=>e.empOrgId === user.empOrgId)).map((stop) => [stop.lat, stop.long]);
-
-                if (routes && location ) {
-                    const polygon = L.polygon(polygonPoints, {
-                        color: isWithinArea ? 'green' : '#478CCF', // Use state variable to set color
-                        weight: 7,
-                        opacity: 0.8,
-                        fill: false,
-                        lineJoin:"round"
-                    }).addTo(map);
-                    map.setView(state.position, map.getZoom());
-                    return null;
-                }
-           
-        }
-
-
-
-
-
-
-
+    function MapComponent() {
+        const map = useMap();
+        const polygonPoints = routes.filter((e => e.empOrgId === user.empOrgId)).map((stop) => [stop.lat, stop.long]);
+        var polygon = L.polygon(polygonPoints, { color: 'blue' , weight: 7, opacity: 0.8,fill: false,}).addTo(map);
+        map.setView(state.position, map.getZoom());
+        return null;
+    }
+  
+    
+    
+    
     return (
         <>
             <div className="bg-gradient-to-r from-gray-950 to-gray-800 text-white">
@@ -345,7 +332,7 @@ export default function PunchIn(props) {
                                         className=" disabled relative bg-blue-400 py-2 px-4 rounded-md flex items-center justify-center shadow-md mb-4 w-full overflow-hidden text-white"
                                     >
                                         <>
-                                            <span className="font-semibold mr-2">Attendance Marked for the Day</span>
+                                            <Link to={"/emp/attendanceHistory"} className="font-semibold mr-2">Attendance Marked for the Day</Link>
 
                                         </>
                                     </button>
